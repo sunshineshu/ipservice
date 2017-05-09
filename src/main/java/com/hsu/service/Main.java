@@ -1,12 +1,12 @@
-package com.vipkid.service;
+package com.hsu.service;
 
 import com.google.gson.Gson;
+import com.hsu.service.useragent.UserAgentUtil;
 import com.maxmind.geoip2.exception.GeoIp2Exception;
-import com.vipkid.service.geo.GeoUtil;
+import com.hsu.service.geo.GeoUtil;
 
-import static com.vipkid.service.geo.GeoUtil.getCity;
-import static com.vipkid.service.geo.GeoUtil.getIsp;
-import static com.vipkid.service.useragent.UserAgentUtil.getBrowserAndVersion;
+import static com.hsu.service.geo.GeoUtil.getCity;
+import static com.hsu.service.geo.GeoUtil.getIsp;
 import static spark.Spark.get;
 import static spark.Spark.internalServerError;
 import static spark.Spark.notFound;
@@ -34,7 +34,7 @@ public class Main {
                 get("/city", (request, response) -> getCity(request.params(":ip")), gson::toJson);
                 get("/isp", (request, response) ->  getIsp(request.params(":ip")), gson::toJson);
             });
-            get("/ua", ((request, response) -> getBrowserAndVersion(request.queryParams("userAgent"))), gson::toJson);
+            get("/ua", ((request, response) -> UserAgentUtil.getBrowserAndVersion(request.queryParams("userAgent"))), gson::toJson);
         });
 
         notFound((req, res) -> {

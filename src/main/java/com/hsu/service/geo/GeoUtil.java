@@ -1,4 +1,4 @@
-package com.vipkid.service.geo;
+package com.hsu.service.geo;
 
 import com.maxmind.geoip2.DatabaseReader;
 import com.maxmind.geoip2.model.CityResponse;

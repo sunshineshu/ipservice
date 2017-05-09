@@ -1,4 +1,4 @@
-package com.vipkid.service.useragent;
+package com.hsu.service.useragent;
 
 /**
  * Created by xushengxiang on 2017/5/4.

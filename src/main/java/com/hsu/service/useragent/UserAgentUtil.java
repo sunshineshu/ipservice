@@ -1,4 +1,4 @@
-package com.vipkid.service.useragent;
+package com.hsu.service.useragent;
 
 import eu.bitwalker.useragentutils.Browser;
 import eu.bitwalker.useragentutils.UserAgent;
